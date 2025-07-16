@@ -1,0 +1,19 @@
+---
+- name: Install Nginx Only
+  hosts: nginx
+  become: true
+  roles:
+    - nginx
+
+- name: Install Apache2 Only
+  hosts: apache
+  become: true
+  roles:
+    - apache
+
+- name: Install Both Web Servers
+  hosts: both
+  become: true
+  roles:
+    - nginx
+    - apache
